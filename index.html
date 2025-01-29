@@ -4,6 +4,21 @@
 
 <h1>Watermark</h1>
 <p>embed testing</p>
+
+<script src="https://player.kinescope.io/latest/elements/kinescope-iframe-player.js"></script>
+
+<!-- Настройки для плееров. -->
+<script>
+  window.KinescopeIframePlayerConfig = {
+    ...window.KinescopeIframePlayerConfig,
+    // ID элемента.
+    myplayer: {
+      ui: { playbackRateButton: true },
+    },
+  };
+</script>
+
+></kinescope-iframe-player>
 <kinescope-iframe-player
   url="https://kinescope.dev/embed/oopuF93jHFNmjTtftaiV1B?v=2.151.1&watermark=testing.com"
   autoplay
