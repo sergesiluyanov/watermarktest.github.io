@@ -8,60 +8,30 @@
       href="https://static.tildacdn.com/tild6535-3931-4534-a462-643438616464/favicon.ico"
       type="image/x-icon"
     />
-    <script>
-      function createPlayer() {
-        const Player = Kinescope.IframePlayer;
-        return Player.create('player', {
-          url: 'https://kinescope.dev/jdgf69117WYMyFBkLGNaEK?v=2.161.1&watermark=testing.com',
-
-          size: { width: '50%', height: 400 },
-
-          behaviour: {
-            // preload: true,
-            // autoPlay: true,
-            // crossOrigin: 'use-credentials',
-          },
-
-          settings: {
-            // driverSettings: {
-            //   hls: { playback: 'native' },
-            // },
-            // metrics: {
-            //   interval: 2000,
-            // },
-          },
-        }).then((player) => {
-          console.log('player initialized');
-
-          // player.on(Player.PlayerEvent.FullscreenChange, ({ data }) => {
-          //   if (!data.isFullscreen) return;
-
-          //   setTimeout(async () => {
-          //     await player.destroy();
-
-          //     if (!document.getElementById('player')) {
-          //       const container = document.createElement('div');
-          //       container.id = 'player';
-          //       document.body.appendChild(container);
-          //     }
-
-          //     await createPlayer();
-          //   }, 5000);
-          // });
-        });
+    <style>
+      .kin-player-embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        max-width: 100%;
+        overflow: hidden;
       }
-
-      function onKinescopeIframeAPIReady(Player) {
-        console.log('iframe api ready', Player);
-        createPlayer();
+      .kin-player-embed-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
-    </script>
-    <script
-      async
-      src="https://player.kinescope.dev/latest/iframe.player.js"
-    ></script>
+    </style>
   </head>
   <body>
-    <div id="player"></div>
+    <div class="kin-player-embed-container">
+      <iframe
+        src="https://kinescope.dev/jdgf69117WYMyFBkLGNaEK?watermark=testing"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+      ></iframe>
+    </div>
   </body>
 </html>
